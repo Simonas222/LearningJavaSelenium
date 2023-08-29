@@ -1,17 +1,15 @@
-name: unit-test
-
 on:
   push:
     branches:
-      'features/*'
+      - 'features/*'
 
 jobs:
- run unit test:
-  runs-on: ubuntu-latest
+  run-unit-test: # Modified the job name by removing spaces and adding a hyphen
+    runs-on: ubuntu-latest
 
-  steps:
-   - name: Checkout
-     uses: actions/checkout@v3.6.0
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2 # Updated the version to v2
 
-   - name: run unit test
-     run: mvn test
+    - name: Run unit test
+      run: mvn test
